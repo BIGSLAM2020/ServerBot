@@ -73,5 +73,7 @@ function helpCommand(arguments, receivedMessage) {
     }
 }
 
+
 client.login("NjY3MDc4NTkyOTE5NzY1MDMy.XiC4Vw.CigTgcAFNVjbvb3Xdlp-AEXrZQc");
 //sometimes the token should be changed due to session time and limits
+
