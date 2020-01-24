@@ -34,6 +34,8 @@ client.on('message', (receivedMessage) => {
 
         if (receivedMessage.content.startsWith("!")) {
             processCommand(receivedMessage);
+        } if (receivedMessage.content.startsWith("$")) {
+            helloCommand(receivedMessage);
         }
 });
 
@@ -69,11 +71,49 @@ function helpCommand(arguments, receivedMessage) {
     if (arguments.length == 0) {
         receivedMessage.channel.send("I'm not sure what you need help with. Try `!help [topic]`");
     } else {
-        receivedMessage.channel.send("It looks like you need some help " + arguments);
+        receivedMessage.channel.send("It looks like you need some help.... type `Help! [topic]`" + arguments);
     }
 }
 
+function helloCommand(receivedMessage) {
+    let reply = receivedMessage.content.substr(1);
+    let hello = reply.split(" ");
+    let fine = hello[0];
+    let bad = hello.splice[1];
+    let goody = hello.splice[1];
+    if (fine == "hello") {
+        replyCommand(bad, receivedMessage);
+    } else if (fine == "fine"){
+        replyCommand2(bad, receivedMessage);
+    } else {
+        receivedMessage.channel.send("hello? reply like this `$Hello` or `$fine`");
+    } if (goody == "goodbye") {
+        replyCommand(bad, receivedMessage);
+    } else if (goody == "bad") {
+        replyCommand2(bad, receivedMessage);
+    } else {
+        receivedMessage.channel.send("Goodbye? reply if you feel good or not '$goodbye' or '$bad'");
+    }
+}
 
-client.login("NjY3MDc4NTkyOTE5NzY1MDMy.XijDpQ.gUxH0JGvRtZkXdwIlWQJEZOmu8k");
+function replyCommand(bad, receivedMessage) {
+    if (bad.length == 0) {
+        receivedMessage.channel.send("Welcome to Sammy's server? `$hello [topic]`");
+    } else {
+        receivedMessage.channel.send("Awesome!! see ya `g$oodbye`" + bad);
+    } 
+}
+
+function replyCommand2(goody, receivedMessage) {
+    if (goody.length == 0) {
+        receivedMessage.channel.send("Welcome to Sammy's server, are you feeling fine? `$goodbye [topic]`");
+    } else {
+        receivedMessage.channel.send("oh that's bad!!!! see ya `$bad`" + goody);
+    } 
+}
+
+
+
+client.login("NjY3MDc4NTkyOTE5NzY1MDMy.Xip8Mg.7_dVNg4Q12xpE-3hp8fQ8yYcdts");
 //sometimes the token should be changed due to session time and limits
 
