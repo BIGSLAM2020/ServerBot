@@ -84,13 +84,13 @@ function helloCommand(receivedMessage) {
     if (fine == "hello") {
         replyCommand(bad, receivedMessage);
     } else if (fine == "fine"){
-        replyCommand2(bad, receivedMessage);
-    } else {
-        receivedMessage.channel.send("hello? reply like this `$Hello` or `$fine`");
-    } if (goody == "goodbye") {
         replyCommand(bad, receivedMessage);
+    } else {
+        receivedMessage.channel.send("hello? reply like this `$hello` or `$fine`");
+    } if (goody == "goodbye") {
+        replyCommand2(goody, receivedMessage);
     } else if (goody == "bad") {
-        replyCommand2(bad, receivedMessage);
+        replyCommand2(goody, receivedMessage);
     } else {
         receivedMessage.channel.send("Goodbye? reply if you feel good or not '$goodbye' or '$bad'");
     }
@@ -100,7 +100,7 @@ function replyCommand(bad, receivedMessage) {
     if (bad.length == 0) {
         receivedMessage.channel.send("Welcome to Sammy's server? `$hello [topic]`");
     } else {
-        receivedMessage.channel.send("Awesome!! see ya `g$oodbye`" + bad);
+        receivedMessage.channel.send("Awesome!! see ya `fine`" + bad);
     } 
 }
 
