@@ -34,6 +34,8 @@ client.on('message', (receivedMessage) => {
 
         if (receivedMessage.content.startsWith("!")) {
             processCommand(receivedMessage);
+        } if (receivedMessage.content.startsWith("$")) {
+            helloCommand(receivedMessage);
         }
 });
 
@@ -69,8 +71,49 @@ function helpCommand(arguments, receivedMessage) {
     if (arguments.length == 0) {
         receivedMessage.channel.send("I'm not sure what you need help with. Try `!help [topic]`");
     } else {
-        receivedMessage.channel.send("It looks like you need some help " + arguments);
+        receivedMessage.channel.send("It looks like you need some help.... type `Help! [topic]`" + arguments);
     }
 }
 
-client.login("NjY3MDc4NTkyOTE5NzY1MDMy.XiC-vQ.3qPBb_KKIIc-NkabeKIPvE33lYI");
+function helloCommand(receivedMessage) {
+    let reply = receivedMessage.content.substr(1);
+    let hello = reply.split(" ");
+    let fine = hello[0];
+    let bad = hello.splice[1];
+    let goody = hello.splice[1];
+    if (bad == "hello") {
+        replyCommand(bad, receivedMessage);
+    } else if (bad == "fine"){
+        replyCommand(bad, receivedMessage);
+    } else {
+        receivedMessage.channel.send("hello? reply like this `$hello` or `$fine`");
+    } if (goody == "goodbye") {
+        replyCommand2(goody, receivedMessage);
+    } else if (goody == "bad") {
+        replyCommand2(goody, receivedMessage);
+    } else {
+        receivedMessage.channel.send("Goodbye? reply if you feel good or not '$goodbye' or '$bad'");
+    }
+}
+
+function replyCommand(bad, receivedMessage) {
+    if (bad.length == 0) {
+        receivedMessage.channel.send("Welcome to Sammy's server? `$hello [topic]`");
+    } else {
+        receivedMessage.channel.send("Awesome!! see ya `fine`" + bad);
+    } 
+}
+
+function replyCommand2(goody, receivedMessage) {
+    if (goody.length == 0) {
+        receivedMessage.channel.send("Welcome to Sammy's server, are you feeling fine? `$goodbye [topic]`");
+    } else {
+        receivedMessage.channel.send("oh that's bad!!!! see ya `$bad`" + goody);
+    } 
+}
+
+
+
+client.login("NjY3MDc4NTkyOTE5NzY1MDMy.XiqPbw.K747SglILiniYyHGKnpPqgm2_V4");
+//sometimes the token should be changed due to session time and limits
+
