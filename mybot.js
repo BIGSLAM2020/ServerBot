@@ -81,9 +81,9 @@ function helloCommand(receivedMessage) {
     let fine = hello[0];
     let bad = hello.splice[1];
     let goody = hello.splice[1];
-    if (fine == "hello") {
+    if (bad == "hello") {
         replyCommand(bad, receivedMessage);
-    } else if (fine == "fine"){
+    } else if (bad == "fine"){
         replyCommand(bad, receivedMessage);
     } else {
         receivedMessage.channel.send("hello? reply like this `$hello` or `$fine`");
@@ -114,6 +114,20 @@ function replyCommand2(goody, receivedMessage) {
 
 
 
-client.login("NjY3MDc4NTkyOTE5NzY1MDMy.Xip8Mg.7_dVNg4Q12xpE-3hp8fQ8yYcdts");
+client.login("NjY3MDc4NTkyOTE5NzY1MDMy.XiqPbw.K747SglILiniYyHGKnpPqgm2_V4");
 //sometimes the token should be changed due to session time and limits
 
+
+
+
+/*
+
+function 
+
+
+
+
+
+
+
+*/
