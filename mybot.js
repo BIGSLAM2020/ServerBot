@@ -118,7 +118,7 @@ function replyCommand2(goody, receivedMessage) {
 
 
 
-client.login("NjY3MDc4NTkyOTE5NzY1MDMy.XjBmoQ.Qdsp2qGaPDfao5UGyIxmRle1dzQ");
+client.login("NjY3MDc4NTkyOTE5NzY1MDMy.XjoFgw.RYuYv4fDF2DJ0alp1Jofuthx7gg");
 
 //sometimes the token should be changed due to session time and limits
 
